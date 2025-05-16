@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Battambang:wght@100;300;400;700;900&family=Kosugi&family=Koulen&family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* ========== COLORS ========== */
+    --black: #000000;
+    --white: #FFFFFF;
+    --nav: #7F909C;
+    --submenu: #65737C;
+    --submenuhover: #7C8EAE;
+    --footer: #1B396B;
+    
+    --darkblue: #101660;
+    --ligthdet_blue: #DFE9F5;
+    --bluecarr: #A3B8C7;
+    --graycarr: #E8E8E8;
+    --back_darkblue: #294B7D;
+    --lightblue: #8B9CB6;
+    --back_lightblue: #E3EDF1;
+    --ribbon_sblue: #406AA2;
+    --ribbon_tblue: #8DA7CA;
+    --ribbon_fblue: #DBE4F1;
+    --match_detblue: #447B9E;
+    --match_medblue: #B9CCE6;
+    --match_lightblue: #D2DEEA;
+    --pos_blue: #E4ECEF;    
+
+    /* =========== FONTS =========== */
+    --Koulen: "Koulen", sans-serif;
+    --Kosugi: "Kosugi", sans-serif;
+    --Alex: "Alex Brush", cursive;
+    --Saira: "Saira Condensed", sans-serif;    /*nav*/
+    --Krub: "Krub", sans-serif;
+    --Battambang: "Battambang", system-ui;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+::before, ::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--Kosugi);
+    color: var(--black);
+    background-color: var(--back_lightblue);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+ul { list-style: none; }
+
+/* ====================== TOAST ====================== */
+.colored-toast.swal2-icon-error { background-color: var(--darkblue) !important; }
+
+.colored-toast.swal2-icon-success { background-color: var(--darkblue) !important; }
+
+.colored-toast .swal2-title,
+.colored-toast .swal2-close,
+.colored-toast .swal2-html-container {
+    color: white; 
+    font-size: 1.2rem !important;
+    font-weight: 50 !important;
+}
+
+.colored-toast .swal2-title { font-weight: bold; }
+
+/* ====================== CUERPO / DIV ====================== */
+.body {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ====================== NAV ====================== */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 21px 35px;
+    background-color: var(--nav);
+    opacity: 95%;
+    font-family: var(--Koulen);
+    font-size: 1.75rem;
+    transition: transform 0.3s ease;
+    z-index: 99;
+}
+
+.scrolled {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.navigation li { position: relative; }
+
+.navigation .preLogo {
+    position: absolute;
+    top: -30%;
+    height: 5.3rem;
+    transform: translateX(215%);
+}
+
+.navigation .login { margin-left: auto; }
+
+.navigation li a {
+    color: var(--white);
+    letter-spacing: 1.5px;
+    margin-right: 35px;
+}
+
+ .navigation li:first-child a ion-icon {
+    transform: translateY(2px);
+    margin-right: 6px;
+}
+
+.navigation li:nth-child(2) a ion-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 6px;
+}
+
+.navigation li:nth-child(4) a ion-icon {
+    transform: translateY(13%);
+    margin-left: 6px;
+}
+
+.navigation li:last-child a { margin-right: 0; }
+
+.navigation li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 240px;
+    width: 235px;
+    padding: 5px 15px;
+    background-color: var(--nav);
+    color: var(--white);
+    font-family: var(--Battambang);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 21px;       /* Igual al padding-top del navigation */
+    margin-left: -20px;
+}
+
+.navigation li.active > ul { display: block; }
+
+.subdiscipline li {
+    padding: 12px 30px 12px 5px;
+    position: relative;
+    border-bottom: 1px solid var(--white);
+}
+
+.subdiscipline li a {
+    display: block;
+    width: 100%;
+}
+
+.subdiscipline li ion-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+}
+
+.subdiscipline li:first-child ion-icon {
+    right: 10px;
+    top: 35%;
+}
+
+.subdiscipline li:last-child { border-bottom: none; }
+
+.subdiscipline li:hover { background-color: var(--submenuhover); }
+
+.subdiscipline .options {
+    top: -46%;
+    left: 100%;
+    margin-left: 15px;
+    background-color: var(--nav);
+}
+
+.subdiscipline .options li {
+    padding: 12px 30px 12px 5px;
+    position: relative;
+    border-bottom: 1px solid var(--white);
+}
+
+.subdiscipline .options li:last-child { border-bottom: none; }
+
+/* ====================== OPCIONES ====================== */
+.options {
+    background-image: url('../images/Background.webp');
+    background-position: right right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.option {
+    height: 80%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 15%;
+}
+
+.lblOption {
+    position: relative;
+    background-color: var(--white);
+    width: 220px;
+    height: 60px;
+    border-radius: 10px;
+    font-family: var(--Kosugi);
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lblOption::before,
+.lblOption::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 60px;
+    border: 1.5px solid var(--black);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.lblOption::before {
+    top: 7px;
+    left: 7px;
+}
+
+.lblOption::after {
+    bottom: 7px;
+    right: 7px;
+}
+
+/* ====================== CONTENIDO / AÑADIR GRUPOS ====================== */
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    height: 75%;     
+    margin-top: 5%;
+    background: #294B7D30;
+    backdrop-filter: blur(0.4rem);
+    -webkit-backdrop-filter: blur(0.4rem);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.discipline {
+    font-family: var(--Alex);
+    font-size: 100px;
+    color: var(--white);
+}
+
+.discipline .type {    
+    font-weight: 100;
+    text-shadow: 6px 3px 0px var(--darkblue);
+}
+
+.info {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.input-box,
+.category {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-bottom: 2px solid var(--black);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.title {
+    position: static;
+    font-size: 2em;
+    flex: 1;
+}
+
+.input {
+    flex: 2;
+    margin: 8px auto 0 50px;
+    width: 70%;
+    height: 70%;
+    background: rgb(41, 75, 125, 0.6);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1.3em;                        
+    font-weight: 400;
+    color: var(--white);
+    padding: 0 35px 0 10px;
+}
+
+input::placeholder { color: var(--white); }
+
+.input.selector {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btns {
+    position: relative;
+    width: 50%;
+    height: 45px;
+    margin-top: 10%;
+    background-image: linear-gradient(
+        to right,
+        var(--bluecarr) 0%,
+        var(--graycarr) 50%,
+        var(--bluecarr) 100%
+    );
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.groupOptions {
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+    border-radius: 20px;
+    font-size: 1em;
+    padding: 0 30px 5px 20px;
+}
+
+.bttnOpt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    font-family: var(--Koulen);
+    font-weight: lighter;
+}
+
+.opt { cursor: pointer; }
+
+.opt ion-icon {
+    transform: translateY(10%);
+    margin-right: 0.2em;
+}
+
+.bttnNm {
+    margin-left: auto;
+    font-family: var(--Alex);
+    font-size: 3em;
+    color: var(--darkblue);
+}
+
+/* ====================== CONTENIDO / MODIFICAR GRUPOS ====================== */
+.modify {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+}
+
+.modify p {
+    font-size: 1.3em;
+    margin-bottom: 3%;
+}
+
+.input.selector.m {
+    width: 80%;
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1.5em
+}
+
+/* ====================== CONTENIDO / BUSCAR GRUPOS ====================== */
+.input.m {
+    width: 80%;
+    margin: 0;
+}
+
+.catSearch { margin-top: 1em; }
+
+/* ====================== CONTENIDO / AÑADIR EQUIPOS ====================== */
+.category.team { 
+    gap: 5%; 
+    padding: 0;
+    justify-content: center;
+    padding: 0 2em;
+}
+
+.teamOpt {
+    position: relative;
+    display: flex;
+    width: 48%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamOpt p { font-size: 1.9em; }
+
+.inputDesc {
+    display: flex;
+    flex-direction: column;
+}
+
+.input.team { margin: 0; }
+
+.input.selector.team,
+.input.selector.play { margin-left: 7%; }
+
+/* ====================== CONTENIDO / BUSCAR EQUIPOS ====================== */
+.category.srcTeam { 
+    border-bottom: none; 
+    height: 80px;
+    padding: 0;
+}
+
+.category.team,
+.category.team.src { width: 120%; }
+
+.category.team.src:last-of-type { height: 90px; }
+
+.modify.srcTeam {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input.selector.srcTeam { 
+    width: 90%; 
+    margin: 0;
+}
+
+.btns.srcTeam { margin-top: 3%; }
+
+.btns.teamSrc { margin-top: 5%; }
+
+.title.bold { font-weight: bold; }
+
+/* ====================== CONTENIDO / AÑADIR JUGADORES ====================== */
+.input-box.play,
+.category.team.play {
+    width: 120%;
+    padding: 0 2em;
+}
+
+.input-box.play { margin-top: -6%; }
+
+.input.play { margin: 0; }
+
+.btns.play { margin-top: 1.6%; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.playerPic {
+    width: 100%;
+    height: 100%;
+    margin-top: -3%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+}
+
+.photoPlayer { 
+    width: 100%; 
+    height: 18em;
+}
+
+.photoPlayer img { 
+    width: 100%; 
+    height: 100%;
+    border-radius: 100%;
+}
+
+.playerInfo { width: 100%; }
+
+.btns.player { width: 100%; }
+
+/* ====================== CONTENIDO / MODIFICAR JUGADORES ====================== */

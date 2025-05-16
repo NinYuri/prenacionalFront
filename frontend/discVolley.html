@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRENACIONAL</title>
+    <link rel="icon" href="./assets/images/LogoPre.ico">
+    <!-- ====== CSS Files ====== -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <ul class="navigation">
+            <li><a href="./index.html"><ion-icon name="home-sharp"></ion-icon>INICIO</a></li>
+            
+            <li>
+                <a href="#">DISCIPLINAS<ion-icon name="caret-down"></ion-icon></a>
+                <ul class="subdiscipline"></ul>
+            </li>
+
+            <li><img src="./assets/images/Logo Prenacional.webp" alt="logo" class="preLogo"></li>
+
+            <li class="login"><a href="./login.html">LOGIN<ion-icon name="person-circle-sharp"></ion-icon></a></li>
+        </ul>
+
+        <div class="content">
+            <div class="discipline">
+                <h3 class="type">Voleibol</h3>
+            </div>
+
+            <div class="pics">
+                <div class="teamsM active" data-category="male">
+                    <img src="./assets/images/Voley_V.webp" alt="Voleibol Varonil" class="teamM">
+                </div>
+
+                <div class="teamsF" data-category="female">
+                    <img src="./assets/images/Voley_F.webp" alt="Voleibol Femenil" class="teamF">
+                </div>
+            </div>
+    
+            <div class="rules">
+                <div class="box">
+                    <h2 class="program">REGLAMENTO Y PROGRAMA GENERAL</h2>
+                </div>
+            </div>
+        </div>        
+    </header>
+
+    <!-- ================================= CAROUSEL TECS ================================= -->
+    <div class="tecs">
+    </div>
+
+    <!-- ===================================== GRUPOS ===================================== -->
+    <div id="groups" class="groups"> 
+        <div class="icon">
+            <img src="./assets/images/Icon_VV.webp" 
+                alt="Voleibol"
+                data-changeable="icon"
+                data-male-src="./assets/images/Icon_VV.webp"
+                data-female-src="./assets/images/Icon_VF.webp">
+        </div>   
+
+        <div class="info">
+            <h3 data-changeable="title"
+                data-male-text="VARONIL"
+                data-female-text="FEMENIL">VARONIL</h3>
+
+            <div class="group">
+                <div class="prev" style="display: none;">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </div>
+
+                <div class="lblGroup">   
+                    <h1 data-group-name></h1>                 
+                </div>
+
+                <div class="next">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>                
+            </div>
+            
+            <div class="points">
+                <div class="grid-header">
+                    <div class="sections titlePoints">
+                        <div>JJ</div>
+                        <div>JG</div>
+                        <div>JP</div>
+                        <div>PF</div>
+                        <div>PC</div>
+                        <div>DP</div>
+                        <div class="ptsTitle"> PTS </div>                    
+                    </div>
+                </div>
+                 
+                <div class="sections teams">                                       
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <!-- ===================================== SEDES ===================================== -->
+    <div id="sedes" class="sedes">
+        <div class="sedesInfo">
+            <div class="sedesTitles">
+                <h3>CANCHAS</h3>                
+            </div>
+            
+            <div class="sedesOptions">
+                <p>HOSPITALES</p>
+                <div class="first"></div>                
+                <p>HOTELES</p>
+            </div>
+        </div> 
+
+        <div class="ribbonBack">
+            <img src="./assets/images/Ribbon.webp" alt="Ribbon" class="ribbon">
+            
+            <div class="carImg"></div>
+        </div>   
+
+        <div class="card">
+            <div class="cardHolder">
+                <p class="cardTitle"></p>
+                <img src="" alt="Cancha">
+                <div class="cardUb">
+                    <p></p>
+                </div>   
+                <div class="cardLinks"></div>                             
+            </div>            
+        </div>
+    </div>
+
+    <!-- =================================== ASISTENCIA =================================== -->
+     <div id="list" class="list">
+            <div class="col left">
+                <div class="players after">
+                    <div class="playersTeam af">
+                        <h2>EQUIPO ANTERIOR</h2>                    
+                        <div class="prevPlayer">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </div>
+                    </div>
+                    
+                    <h5>HAGA CLICK EN EL JUGADOR QUE SE ENCUENTRE PRESENTE</h5>
+                </div>
+
+                <div class="listPlayers"></div>
+            </div>
+
+            <div class="col center">
+                <div class="teamLogo">
+                    <img src="" alt="">
+                </div>
+
+                <div class="teamGroup">
+                    <div class="groupText">
+                        <h1></h1>
+                        <h2>GRUPO</h2>
+
+                        <div class="groupArrows">
+                            <div class="groupPrev">
+                                <ion-icon name="chevron-back-outline"></ion-icon>
+                            </div>
+                            <div class="groupNext">
+                                <ion-icon name="chevron-forward-outline"></ion-icon>
+                            </div>
+                        </div>                        
+                    </div>                    
+                </div>
+
+                <div class="countPlayers"></div>
+
+                <div class="complete hidden">
+                    <div class="checkText">
+                        <svg viewBox="0 0 100 100" class="curved-text">
+                            <path id="circlePath" d="M50,98a40,40 0 0,1 0,-80a40,40 0 0,1 0,80"/>
+                            <text>
+                                <textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+                                    EQUIPO COMPLETO
+                                </textPath>
+                            </text>
+                        </svg>
+
+                        <img src="./assets/images/Check.webp" alt="check">                            
+                    </div>                                                            
+                </div>
+            </div>
+
+            <div class="col right">
+                <div class="players before">
+                    <div class="playersTeam bf">
+                        <h2>EQUIPO SIGUIENTE</h2>  
+                        <div class="nextPlayer">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </div>   
+                    </div>
+                </div>
+                
+                <div class="listPlayers"></div>
+            </div>
+     </div>
+
+    <!-- =================================== SEMIFINALES =================================== -->
+    <div id="semifinals" class="semifinals">     
+        <div class="semiLeft">
+            <div class="backRed">
+                <img src="./assets/images/Red.webp" alt="Red">
+            </div>            
+                       
+            <h3>SEMIFINALES</h3>
+            <div class="semiTitle"></div> 
+        </div>
+        
+        <div class="semiRight">
+            <div class="semiContainer"></div>
+        </div>
+    </div>
+
+    <!-- ====================================== FINALES ====================================== -->
+    <div id="finals" class="semifinals">
+        <div class="semiRight">
+            <div class="semiContainer"></div>
+        </div>
+
+        <div class="semiLeft">
+            <div class="backRed">
+                <img src="./assets/images/Red.webp" alt="Red">
+            </div>  
+
+            <h3>FINALES</h3>
+            <div class="semiTitle"></div> 
+        </div>
+     </div>
+
+    <!-- ===================================== POSICIONES ===================================== -->
+    <div id="positions" class="positions">
+        <div class="posText">
+            <div class="posTitle">
+                <p>POSICIONES</p>
+                <h1>FINALES</h1>
+            </div>  
+              
+            <img src="./assets/images/VoleyRed.webp" alt="Red">        
+        </div>        
+
+        <div class="posTecs">
+            <div class="moduleTec"></div>
+
+            <div class="moduleTec rht"></div>
+        </div>
+    </div>
+
+    <!-- ======================================== FOOTER ======================================== -->
+    <div class="bfFooter"></div>
+
+    <div class="footer">
+       <div class="escudo">
+           <img src="./assets/images/Tec.webp" alt="Tec" class="tec">
+
+           <a href="https://www.facebook.com/ITJiquilpanMich" class="socialLink">
+               <img src="./assets/images/Facebook.webp" alt="Facebook" class="facebook">
+               <span class="socialText">FACEBOOK</span>
+           </a>
+           
+           <a href="https://www.youtube.com/channel/UC9kxJwry9WvAAq6fwaoFOjg" class="socialLink">
+               <img src="./assets/images/Youtube.webp" alt="Youtube" class="youtube">
+               <span class="socialText">YOUTUBE</span>
+           </a>
+
+           <a href="https://twitter.com/TecNMJiquilpan" class="socialLink">
+               <img src="./assets/images/Twitter.webp" alt="Twitter" class="twitter">
+               <span class="socialText">TWITTER</span>
+           </a>
+
+           <a href="https://www.instagram.com/tecnmjiquilpan/" class="socialLink">
+               <img src="./assets/images/Instagram.webp" alt="Instagram" class="insta">
+               <span class="socialText">INSTAGRAM</span>
+           </a>
+       </div>
+
+       <div class="emergency">
+           <p class="emergPhone">TELÉFONOS DE EMERGENCIA</p>
+
+           <div class="emerPhones">                                
+               <div class="phones">
+                   <img src="/frontend/assets/images/Telefono.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">BOMBEROS Y PROTECCIÓN CIVIL</p>
+                       <a href="tel:3535334108" class="phoneNumber">353 533 4108</a>
+                   </div>                    
+               </div>
+
+               <div class="phones">
+                   <img src="/frontend/assets/images/Telefono.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">POLICÍA MUNICIPAL</p>
+                       <a href="tel:3535330824" class="phoneNumber">353 533 0824</a>
+                   </div>
+               </div>
+
+               <div class="phones">
+                   <img src="/frontend/assets/images/Telefono.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">POLICÍA FEDERAL</p>
+                       <a href="tel:3535333434" class="phoneNumber">353 533 3434</a>
+                   </div>                    
+               </div>
+           </div>
+       </div>
+
+       <div class="tecnm">
+           <p class="emergPhone">TECNM</p>
+
+           <div class="emerPhones">
+               <div class="phones">
+                   <img src="/frontend/assets/images/Ubicacion.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">DIRECCIÓN</p>
+                       <p class="phoneNumber">Av. Universidad 1200, Col. Xoco, Alcaldía Benito Juárez, Ciudad de México, C.P. 03330</p>
+                   </div>                    
+               </div>
+
+               <div class="phones">
+                   <img src="/frontend/assets/images/Telefono.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">TELÉFONO</p>
+                       <a href="tel:5536002500" class="phoneNumber">Conmutador: (55) 3600 2500</a>
+                   </div>                    
+               </div>
+
+               <div class="phones">
+                   <img src="/frontend/assets/images/Correo.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">CORREO</p>
+                       <a href="mailto:contacto@tecnm.mx" class="phoneNumber">contacto@tecnm.mx</a>
+                   </div>                    
+               </div>
+           </div>
+       </div>
+
+       <div class="itj">
+           <p class="emergPhone">ITJ</p>
+
+           <div class="emerPhones">
+               <div class="phones">
+                   <img src="/frontend/assets/images/Ubicacion.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">DIRECCIÓN</p>
+                       <p class="phoneNumber">Avenida Carretera Nacional S/N, Km. 202, Colonia La Loma, C.P. 59510 Jiquilpan de Juárez, Michoacán, México</p>
+                   </div>                    
+               </div>
+
+               <div class="phones">
+                   <img src="/frontend/assets/images/Telefono.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">TELÉFONO</p>
+                       <a href="tel:3535331126" class="phoneNumber">(353) 533 1126</a>
+                   </div>                    
+               </div>
+
+               <div class="phones">
+                   <img src="/frontend/assets/images/Correo.webp" alt="Phone">
+
+                   <div class="phoneText">
+                       <p class="phonePeople">CORREO</p>
+                       <a href="mailto:difusionitj@gmail.com" class="phoneNumber">difusionitj@gmail.com</a>
+                   </div>                    
+               </div>
+           </div>
+       </div>
+    </div>
+
+    <!-- ====== Iconos ====== -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- ====== Funcionalidad ====== -->
+    <script type="module" src="./assets/js/conection.js"></script>
+</body>
+</html>

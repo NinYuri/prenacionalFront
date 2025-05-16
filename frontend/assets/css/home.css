@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Battambang:wght@100;300;400;700;900&family=Kosugi&family=Koulen&family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* ========== COLORS ========== */
+    --black: #000000;
+    --white: #FFFFFF;
+    --nav: #7F909C;
+    --submenu: #65737C;
+    --submenuhover: #7C8EAE;
+    --footer: #1B396B;
+    
+    --darkblue: #101660;
+    --ligthdet_blue: #DFE9F5;
+    --bluecarr: #A3B8C7;
+    --graycarr: #E8E8E8;
+    --back_darkblue: #294B7D;
+    --lightblue: #8B9CB6;
+    --back_lightblue: #E3EDF1;
+    --ribbon_sblue: #406AA2;
+    --ribbon_tblue: #8DA7CA;
+    --ribbon_fblue: #DBE4F1;
+    --match_detblue: #447B9E;
+    --match_medblue: #B9CCE6;
+    --match_lightblue: #D2DEEA;
+    --pos_blue: #E4ECEF;    
+
+    /* =========== FONTS =========== */
+    --Koulen: "Koulen", sans-serif;
+    --Kosugi: "Kosugi", sans-serif;
+    --Alex: "Alex Brush", cursive;
+    --Saira: "Saira Condensed", sans-serif;    /*nav*/
+    --Krub: "Krub", sans-serif;
+    --Battambang: "Battambang", system-ui;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+::before, ::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--Kosugi);
+    color: var(--black);
+    background-color: var(--back_lightblue);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+ul { list-style: none; }
+
+/* ====================== NAV ====================== */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 21px 35px;
+    background-color: var(--nav);
+    opacity: 95%;
+    font-family: var(--Koulen);
+    font-size: 1.75rem;
+    transition: transform 0.3s ease;
+    z-index: 99;
+}
+
+.scrolled {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.navigation li { position: relative; }
+
+.navigation .preLogo {
+    position: absolute;
+    top: -30%;
+    height: 5.3rem;
+    transform: translateX(215%);
+}
+
+.navigation .login { margin-left: auto; }
+
+.navigation li a {
+    color: var(--white);
+    letter-spacing: 1.5px;
+    margin-right: 35px;
+}
+
+ .navigation li:first-child a ion-icon {
+    transform: translateY(2px);
+    margin-right: 6px;
+}
+
+.navigation li:nth-child(2) a ion-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 6px;
+}
+
+.navigation li:nth-child(4) a ion-icon {
+    transform: translateY(13%);
+    margin-left: 6px;
+}
+
+.navigation li:last-child a { margin-right: 0; }
+
+.navigation li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 240px;
+    width: 235px;
+    padding: 5px 15px;
+    background-color: var(--nav);
+    color: var(--white);
+    font-family: var(--Battambang);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 21px;       /* Igual al padding-top del navigation */
+    margin-left: -20px;
+}
+
+.navigation li.active > ul { display: block; }
+
+.subdiscipline li {
+    padding: 12px 30px 12px 5px;
+    position: relative;
+    border-bottom: 1px solid var(--white);
+}
+
+.subdiscipline li a {
+    display: block;
+    width: 100%;
+}
+
+.subdiscipline li ion-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+}
+
+.subdiscipline li:first-child ion-icon {
+    right: 10px;
+    top: 35%;
+}
+
+.subdiscipline li:last-child { border-bottom: none; }
+
+.subdiscipline li:hover { background-color: var(--submenuhover); }
+
+.subdiscipline .options {
+    top: -46%;
+    left: 100%;
+    margin-left: 15px;
+    background-color: var(--nav);
+}
+
+.subdiscipline .options li {
+    padding: 12px 30px 12px 5px;
+    position: relative;
+    border-bottom: 1px solid var(--white);
+}
+
+.subdiscipline .options li:last-child { border-bottom: none; }
+
+/* ====================== HEADER ====================== */
+header {
+    background-image: url('../images/Cancha_Tec.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.content {
+    height: calc(100vh - 60px);
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.content img { height: 80%; }
